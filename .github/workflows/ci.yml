@@ -34,4 +34,4 @@ jobs:
           "$PY" -m pip install -r requirements.txt
 
       - name: Start the app with plain "python" (it must switch to .venv by itself)
-        run: python langchain_email_english.py --help
+        run: python langchain_writing_assistant.py --help

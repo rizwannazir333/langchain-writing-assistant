@@ -1,8 +1,8 @@
-# LangChain Email & English Assistant
+# LangChain Writing Assistant
 
 **A private, offline AI writing assistant built with LangChain and Ollama: prompt templates, chains, structured output, conversation memory, tool-using agents and more, all running on a local model.**
 
-[![CI](https://github.com/rizwannazir333/langchain-email-english/actions/workflows/ci.yml/badge.svg)](https://github.com/rizwannazir333/langchain-email-english/actions/workflows/ci.yml)
+[![CI](https://github.com/rizwannazir333/langchain-writing-assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/rizwannazir333/langchain-writing-assistant/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1.4-1C3C3C)
 ![Ollama](https://img.shields.io/badge/Ollama-local%20LLM-000000)
@@ -11,13 +11,13 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 > **Series: Building the same AI app three ways**
-> [Part 1: Plain Ollama](https://github.com/rizwannazir333/ollama-email-english) · **Part 2: LangChain** (this repo) · [Part 3: LangGraph](https://github.com/rizwannazir333/langgraph-email-english)
+> [Part 1: Plain Ollama](https://github.com/rizwannazir333/ollama-writing-assistant) · **Part 2: LangChain** (this repo) · [Part 3: LangGraph](https://github.com/rizwannazir333/langgraph-writing-assistant)
 
 ---
 
 ## Overview
 
-In [Part 1](https://github.com/rizwannazir333/ollama-email-english) I built an email writer and grammar
+In [Part 1](https://github.com/rizwannazir333/ollama-writing-assistant) I built an email writer and grammar
 checker with nothing but the `ollama` library. It worked, but every capability had to be written by
 hand, and the app had no memory, no tools and only free-text output.
 
@@ -36,7 +36,7 @@ Everything runs locally on a 4-bit quantized model. **No API key, no cloud, no d
 
 ## LangChain Features Demonstrated
 
-Each feature is marked with a `FEATURE` comment in [`langchain_email_english.py`](langchain_email_english.py).
+Each feature is marked with a `FEATURE` comment in [`langchain_writing_assistant.py`](langchain_writing_assistant.py).
 
 | # | Feature | LangChain API | Role in this project |
 |---|---|---|---|
@@ -89,8 +89,8 @@ flowchart LR
 ollama pull qwen3.5:4b
 
 # 2. Clone the repository
-git clone https://github.com/rizwannazir333/langchain-email-english.git
-cd langchain-email-english
+git clone https://github.com/rizwannazir333/langchain-writing-assistant.git
+cd langchain-writing-assistant
 
 # 3. Create a virtual environment and install dependencies
 python -m venv .venv
@@ -101,7 +101,7 @@ python -m venv .venv
 ```
 
 > The script detects a `.venv` folder next to it and re-launches itself with that interpreter, so
-> `python langchain_email_english.py` works without activating the environment.
+> `python langchain_writing_assistant.py` works without activating the environment.
 
 ---
 
@@ -110,7 +110,7 @@ python -m venv .venv
 ### Interactive menu
 
 ```bash
-python langchain_email_english.py
+python langchain_writing_assistant.py
 ```
 
 ```
@@ -157,11 +157,11 @@ I would like to request time off next Friday, November 20th, for a family event.
 ### One-line commands
 
 ```bash
-python langchain_email_english.py email "ask my manager for Friday off"
-python langchain_email_english.py --tone friendly email "invite the team to lunch on Thursday"
-python langchain_email_english.py correct "me and him is going to meeting tomorow"
-python langchain_email_english.py agent "ask my manager for next Friday off"
-python langchain_email_english.py --think correct "..."      # show reasoning
+python langchain_writing_assistant.py email "ask my manager for Friday off"
+python langchain_writing_assistant.py --tone friendly email "invite the team to lunch on Thursday"
+python langchain_writing_assistant.py correct "me and him is going to meeting tomorow"
+python langchain_writing_assistant.py agent "ask my manager for next Friday off"
+python langchain_writing_assistant.py --think correct "..."      # show reasoning
 ```
 
 ### Options
@@ -311,8 +311,8 @@ loaded in memory (`keep_alive="30m"`), pre-loaded at start-up.
 ## Project Structure
 
 ```
-langchain-email-english/
-├── langchain_email_english.py  # the application
+langchain-writing-assistant/
+├── langchain_writing_assistant.py  # the application
 ├── requirements.txt            # pinned dependencies
 ├── .gitignore                  # keeps .venv and caches out of Git
 ├── LICENSE                     # MIT License
@@ -325,9 +325,9 @@ langchain-email-english/
 
 | Part | Repository | What it adds |
 |---|---|---|
-| 1 | [ollama-email-english](https://github.com/rizwannazir333/ollama-email-english) | Direct model access, prompting, streaming |
-| **2** | **langchain-email-english** (you are here) | Prompt templates, chains, structured output, memory, tools, agents |
-| 3 | [langgraph-email-english](https://github.com/rizwannazir333/langgraph-email-english) | Graph workflows, self-review loops, human approval, parallelism, caching |
+| 1 | [ollama-writing-assistant](https://github.com/rizwannazir333/ollama-writing-assistant) | Direct model access, prompting, streaming |
+| **2** | **langchain-writing-assistant** (you are here) | Prompt templates, chains, structured output, memory, tools, agents |
+| 3 | [langgraph-writing-assistant](https://github.com/rizwannazir333/langgraph-writing-assistant) | Graph workflows, self-review loops, human approval, parallelism, caching |
 
 ---
 
@@ -343,4 +343,4 @@ project, including in your own courses and classrooms, as long as the copyright 
 Created and maintained by **[@rizwannazir333](https://github.com/rizwannazir333)**.
 
 If this project helped you learn, please consider giving it a ⭐. Questions, suggestions and
-improvements are welcome through [Issues](https://github.com/rizwannazir333/langchain-email-english/issues).
+improvements are welcome through [Issues](https://github.com/rizwannazir333/langchain-writing-assistant/issues).
