@@ -1,0 +1,13 @@
+# Python virtual environment (each student creates their own)
+.venv/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

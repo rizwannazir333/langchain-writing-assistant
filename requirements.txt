@@ -1,0 +1,6 @@
+# Tested with Python 3.12 and Ollama 0.40 on Windows 11 (CPU only, 16 GB RAM)
+ollama==0.6.3
+langchain==1.4.10
+langchain-core==1.7.7
+langchain-ollama==1.1.0
+pydantic==2.14.3
