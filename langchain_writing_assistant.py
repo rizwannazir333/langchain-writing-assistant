@@ -1,5 +1,6 @@
 """
-LangChain Writing Assistant (Part 2 of 3: LangChain)
+LangChain Writing Assistant: Email Drafting, Revision & Grammar Correction with Tool-Using Agents
+   (Part 2 of 3: LangChain)
    Drafts professional emails and corrects English grammar.
    Runs 100% on your computer with a 4-bit quantized model. No external API.
 

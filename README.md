@@ -1,4 +1,4 @@
-# LangChain Writing Assistant
+# LangChain Writing Assistant: Email Drafting, Revision & Grammar Correction with Tool-Using Agents
 
 **A private, offline AI writing assistant built with LangChain and Ollama: prompt templates, chains, structured output, conversation memory, tool-using agents and more, all running on a local model.**
 
