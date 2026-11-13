@@ -7,6 +7,7 @@
 ![Ollama](https://img.shields.io/badge/Ollama-local%20LLM-000000)
 ![Model](https://img.shields.io/badge/model-qwen3.5%3A4b%20(Q4__K__M)-6E40C9)
 ![API](https://img.shields.io/badge/API%20key-not%20required-success)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 > **Series: Building the same AI app three ways**
 > [Part 1: Plain Ollama](https://github.com/rizwannazir333/ollama-email-english) · **Part 2: LangChain** (this repo) · [Part 3: LangGraph](https://github.com/rizwannazir333/langgraph-email-english)
@@ -313,6 +314,7 @@ langchain-email-english/
 ├── 2_langchain_email_english.py   # the application
 ├── requirements.txt               # pinned dependencies
 ├── .gitignore
+├── LICENSE                        # MIT License
 └── README.md
 ```
 
@@ -325,6 +327,13 @@ langchain-email-english/
 | 1 | [ollama-email-english](https://github.com/rizwannazir333/ollama-email-english) | Direct model access, prompting, streaming |
 | **2** | **langchain-email-english** (you are here) | Prompt templates, chains, structured output, memory, tools, agents |
 | 3 | [langgraph-email-english](https://github.com/rizwannazir333/langgraph-email-english) | Graph workflows, self-review loops, human approval, parallelism, caching |
+
+---
+
+## License
+
+Released under the [MIT License](LICENSE). You are free to use, modify and share this
+project, including in your own courses and classrooms, as long as the copyright notice is kept.
 
 ---
 
