@@ -35,7 +35,7 @@ Everything runs locally on a 4-bit quantized model. **No API key, no cloud, no d
 
 ## LangChain Features Demonstrated
 
-Each feature is marked with a `FEATURE` comment in [`2_langchain_email_english.py`](2_langchain_email_english.py).
+Each feature is marked with a `FEATURE` comment in [`langchain_email_english.py`](langchain_email_english.py).
 
 | # | Feature | LangChain API | Role in this project |
 |---|---|---|---|
@@ -100,7 +100,7 @@ python -m venv .venv
 ```
 
 > The script detects a `.venv` folder next to it and re-launches itself with that interpreter, so
-> `python 2_langchain_email_english.py` works without activating the environment.
+> `python langchain_email_english.py` works without activating the environment.
 
 ---
 
@@ -109,7 +109,7 @@ python -m venv .venv
 ### Interactive menu
 
 ```bash
-python 2_langchain_email_english.py
+python langchain_email_english.py
 ```
 
 ```
@@ -156,11 +156,11 @@ I would like to request time off next Friday, November 20th, for a family event.
 ### One-line commands
 
 ```bash
-python 2_langchain_email_english.py email "ask my manager for Friday off"
-python 2_langchain_email_english.py --tone friendly email "invite the team to lunch on Thursday"
-python 2_langchain_email_english.py correct "me and him is going to meeting tomorow"
-python 2_langchain_email_english.py agent "ask my manager for next Friday off"
-python 2_langchain_email_english.py --think correct "..."      # show reasoning
+python langchain_email_english.py email "ask my manager for Friday off"
+python langchain_email_english.py --tone friendly email "invite the team to lunch on Thursday"
+python langchain_email_english.py correct "me and him is going to meeting tomorow"
+python langchain_email_english.py agent "ask my manager for next Friday off"
+python langchain_email_english.py --think correct "..."      # show reasoning
 ```
 
 ### Options
@@ -311,11 +311,11 @@ loaded in memory (`keep_alive="30m"`), pre-loaded at start-up.
 
 ```
 langchain-email-english/
-├── 2_langchain_email_english.py   # the application
-├── requirements.txt               # pinned dependencies
-├── .gitignore
-├── LICENSE                        # MIT License
-└── README.md
+├── langchain_email_english.py  # the application
+├── requirements.txt            # pinned dependencies
+├── .gitignore                  # keeps .venv and caches out of Git
+├── LICENSE                     # MIT License
+└── README.md                   # this document
 ```
 
 ---

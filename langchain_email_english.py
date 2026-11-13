@@ -1,5 +1,6 @@
 """
-2) LangChain: email drafting + English correction.
+LangChain Email & English Assistant (Part 2 of 3: LangChain)
+   Drafts professional emails and corrects English grammar.
    Runs 100% on your computer with a 4-bit quantized model. No external API.
 
 Quick by default. Add --think to see the model's THINKING live (grey);
@@ -18,11 +19,11 @@ LangChain features used here (search for "FEATURE"):
    10. Tools + agent       - the agent looks up real dates for your email
 
 Run:
-    python 2_langchain_email_english.py                          # menu
-    python 2_langchain_email_english.py email "ask boss for Friday off"
-    python 2_langchain_email_english.py correct "he go to school yesterday"
-    python 2_langchain_email_english.py agent "ask boss for next Friday off"
-    python 2_langchain_email_english.py --think correct "..."     # show thinking (slower)
+    python langchain_email_english.py                          # menu
+    python langchain_email_english.py email "ask boss for Friday off"
+    python langchain_email_english.py correct "he go to school yesterday"
+    python langchain_email_english.py agent "ask boss for next Friday off"
+    python langchain_email_english.py --think correct "..."     # show thinking (slower)
 """
 
 import os
