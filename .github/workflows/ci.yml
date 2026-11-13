@@ -1,0 +1,37 @@
+name: CI
+
+# Checks that the app installs and starts on Windows, macOS and Linux.
+# (A real model run needs Ollama, so CI checks installation, imports and start-up only.)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.10", "3.12"]
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Create .venv and install requirements (as in the README)
+        run: |
+          python -m venv .venv
+          if [ -f .venv/Scripts/python.exe ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
+          "$PY" -m pip install --upgrade pip
+          "$PY" -m pip install -r requirements.txt
+
+      - name: Start the app with plain "python" (it must switch to .venv by itself)
+        run: python langchain_email_english.py --help

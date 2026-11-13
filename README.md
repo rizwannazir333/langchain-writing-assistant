@@ -2,6 +2,7 @@
 
 **A private, offline AI writing assistant built with LangChain and Ollama: prompt templates, chains, structured output, conversation memory, tool-using agents and more, all running on a local model.**
 
+[![CI](https://github.com/rizwannazir333/langchain-email-english/actions/workflows/ci.yml/badge.svg)](https://github.com/rizwannazir333/langchain-email-english/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1.4-1C3C3C)
 ![Ollama](https://img.shields.io/badge/Ollama-local%20LLM-000000)
