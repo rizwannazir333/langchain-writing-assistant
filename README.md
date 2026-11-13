@@ -268,6 +268,10 @@ loaded in memory (`keep_alive="30m"`), pre-loaded at start-up.
 
 ## Design Decisions
 
+- **A plain-Python guardrail for emails:** small models like to add promises nobody asked for
+  (*"I will ensure my tasks are completed"*). `remove_unrequested_promises()` deletes those
+  sentences unless the request itself mentions them: instant, predictable and free, with no
+  extra model call.
 - **One chain per task** keeps responsibilities clear and makes each pipeline reusable.
 - **Structured output over text parsing:** constraining the model with a JSON schema is far more
   reliable than regex on free text, especially with small models.
@@ -280,8 +284,8 @@ loaded in memory (`keep_alive="30m"`), pre-loaded at start-up.
 
 ## Limitations
 
-- Small models may still add unrequested sentences to emails, or produce *"I and he"* instead of
-  *"He and I"*. **Review AI-generated text before use.**
+- Small models can still make mistakes, e.g. *"I and he"* instead of *"He and I"*. Invented
+  promises are removed by the guardrail, but **review AI-generated text before use.**
 - The agent decides for itself whether to call a tool; occasionally it answers without one.
 - Pipelines are linear: there is no self-review loop or human approval step. (Part 3 adds both.)
 

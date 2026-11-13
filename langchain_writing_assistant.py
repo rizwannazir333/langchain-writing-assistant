@@ -43,6 +43,7 @@ for _VENV in (os.path.join(_HERE, ".venv"), os.path.join(os.path.dirname(_HERE),
         break
 
 import argparse
+import re
 import time
 from datetime import date, timedelta
 
@@ -133,6 +134,24 @@ email_prompt = ChatPromptTemplate.from_messages([
     ("human", "{request}"),
 ])
 
+# Guardrail: small models like to add promises the user never asked for, such as
+# "I will ensure my tasks are completed". Remove those sentences in plain Python
+# (instant, no extra model call) - unless the user's own request mentioned them.
+PROMISES = ("i will ensure", "i'll ensure", "i will make sure", "i'll make sure",
+            "will be available", "remain available", "hand over", "handover")
+
+
+def remove_unrequested_promises(email: str, request: str) -> str:
+    banned = [p for p in PROMISES if p not in request.lower()]
+    lines = []
+    for line in email.splitlines():
+        sentences = re.split(r"(?<=[.!?])\s+", line)
+        kept = [s for s in sentences if not any(p in s.lower() for p in banned)]
+        if kept or not line.strip():          # drop lines that became empty
+            lines.append(" ".join(kept))
+    return "\n".join(lines)
+
+
 # FEATURE 3: Few-shot - worked examples the model can copy.
 example_1 = {
     "input": "She goed to the market and buyed two apple.",
@@ -192,7 +211,7 @@ history = []  # FEATURE 6: memory - the email conversation so far
 def draft_email(chains, request: str, tone: str = "professional") -> str:
     inputs = {"request": request, "tone": tone, "history": history,
               "today": date.today().strftime("%A %d %B %Y")}
-    answer = chains["email"].invoke(inputs, CONFIG)
+    answer = remove_unrequested_promises(chains["email"].invoke(inputs, CONFIG), request)
     history.extend([HumanMessage(request), AIMessage(answer)])
     return answer
 
@@ -215,7 +234,7 @@ def correct_many(chains, lines: list[str]) -> str:
 
 def agent_email(chains, request: str) -> str:
     result = chains["agent"].invoke({"messages": [HumanMessage(request)]}, CONFIG)
-    return result["messages"][-1].content
+    return remove_unrequested_promises(result["messages"][-1].content, request)
 
 
 def show(func, *args) -> None:
