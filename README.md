@@ -12,6 +12,8 @@
 
 > **Series: Building the same AI app three ways**
 > [Part 1: Plain Ollama](https://github.com/rizwannazir333/ollama-writing-assistant) · **Part 2: LangChain** (this repo) · [Part 3: LangGraph](https://github.com/rizwannazir333/langgraph-writing-assistant)
+>
+> ▶ **[See recorded runs of all three versions](https://rizwannazir333.github.io/portfolio-rizwan/llm-demo/#langchain)** (no install needed)
 
 ---
 
