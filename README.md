@@ -346,7 +346,8 @@ project, including in your own courses and classrooms, as long as the copyright 
 
 ## Author
 
-Created and maintained by **[@rizwannazir333](https://github.com/rizwannazir333)**.
+Created and maintained by **Rizwan Ali ([@rizwannazir333](https://github.com/rizwannazir333))**, AI Engineer at IFFCO Group (UAE).  
+[Portfolio](https://rizwannazir333.github.io/portfolio-rizwan/) · [LinkedIn](https://linkedin.com/in/rizwan-ali-ai-engineer) · rizwan_nazir@163.com · mrizwan8499@gmail.com
 
 If this project helped you learn, please consider giving it a ⭐. Questions, suggestions and
 improvements are welcome through [Issues](https://github.com/rizwannazir333/langchain-writing-assistant/issues).
